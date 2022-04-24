@@ -161,8 +161,3 @@ main{
   margin: 5rem auto;
 }
 }
-@media(max-width: 26.875rem){
-label{
-  margin: 1rem 0rem;
-}
-}
