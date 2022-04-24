@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Simples</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.mask.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#cep").mask("00000-000")
+      $("#tel").mask("(00) 0000-0000")
+      $("#cpf").mask("000.000.000-00")
+      $("#cnpj").mask("00.000.000/0000-00")
+      $("#telefone").mask("(00) 0000-0000")
+      $("#salario").mask("999.999.990,00", { reverse: true })
+      $("#cepb").mask("00000-000")
+      $("#rg").mask("999.999.999-x", {
+        translation: {
+          'x': {
+            pattern: /[axAX0-9]/
+          }
+        },
+        reverse: true
+      })
+      var option = {
+        translation: {
+          'x': { pattern: /[A-YZ]/ },
+          'y': { pattern: /[a-yz]/ }
+        }
+      }
+      $("#placa").mask("xxx-0000", option)
+      $("#codigo").mask("xx.yyy.0000", option)
+      $("#celular").mask("(00) 0000-00009")
+      $("#celular").blur(function (event) {
+        if ($(this).val().length == 15) {
+          $("#celular").mask("(00) 00000-0009")
+        } else {
+          $("#celular").mask("(00) 0000-00009")
+        }
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <!-- $("#").mask("") -->
+  <header class="header">
+    <h1>Projeto: Formulários Simples</h1>
+  </header>
+  <main>
+    <div class="container-formulario explicacao">
+      <h2>Explicando</h2>
+      <hr>
+      <div class="textos">
+        <p>A minha ideia inicial era apenas fazer um simples formulário como prática de um módulo da faculdade, mas acabei pegando algumas ideias iniciais de um curso livre e pensei em aplicar o que eu entendi sobre estilo (css).</p>
+        <p>O primeiro exemplo foi um simples fomulário com a temática "Endereço e Contato Residencial" onde peguei o exemplo (base) mostrado na faculdade com alguns campos de texto e depois pensei em adicionar mascaras jquery dentro de um campo e botões de enviar e limpar.
+        </p>
+        <p>
+          Após terminar achei muito simples o que eu fiz e pensei em fazer mais categorias de JQuery Mask com alguns tipos de informações mais usado no Brasil. Nessa parte procurei por ajuda do YouTube para aprender como aplicar as máscaras nos campos.
+        </p>
+        <p>
+          Esse pequeno projeto pessoal foi muito importante para mim. Conseguir perceber que consigo criar um site simples e aprimorar conforme o que aprendo sobre o mundo do "Front-end Developer".
+        </p>
+      </div>
+    </div>
+    <div class="container-formulario">
+      <h2>Endereço e Contato Residencial (Exemplo)</h2>
+      <hr>
+      <form class="formulario" action="https://pruu.herokuapp.com/dump/test" method="post" target="_blank">
+
+        <fieldset class="grid">
+          <div>
+            <label for="pais">País *</label>
+            <select name="pais" id="pais" required>
+              <option value="br" selected>Brasil</option>
+              <option value="pt">Portugal</option>
+              <option value="es">Espanha</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cep">CEP *</label>
+            <input name="cep" id="cep" type="text" placeholder="00000-000" required>
+          </div>
+
+          <div>
+            <label for="endereco">Endereço *</label>
+            <input name="endereco" id="endereco" type="text" required>
+          </div>
+
+          <div>
+            <label for="numero">Número *</label>
+            <input name="numero" id="numero" type="number" placeholder="112" required>
+          </div>
+
+          <div>
+            <label for="complemento">Complemento</label>
+            <input name="complemento" id="complemento" type="text">
+          </div>
+
+          <div>
+            <label for="uf">UF *</label>
+            <select name="uf" id="uf" required>
+              <option value="ce" selected>Ceará</option>
+              <option value="bh">Bahia</option>
+              <option value="sp">São Paulo</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cidade">Cidade *</label>
+            <select name="cidade" id="cidade" required>
+              <option value="" selected>Selecione...</option>
+              <option value="fortaleza">Fortaleza</option>
+              <option value="pacajus">Pacajus</option>
+              <option value="aracati">Aracati</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="bairro">Bairro</label>
+            <input name="bairro" id="bairro" type="text">
+          </div>
+        </fieldset>
+        <hr>
+        <fieldset class="grid">
+          <div>
+            <label for="empresa">Empresa</label>
+            <input name="empresa" id="empresa" type="text">
+          </div>
+
+          <div>
+            <label for="profeissao">Profissão</label>
+            <select name="profissao" id="profissao">
+              <option value="" selected>Selecione...</option>
+              <option value="estudante">Estudante</option>
+              <option value="desenvolvedor">Desenvolvedor Web</option>
+              <option value="custureira">Custureira</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cargo">Cargo</label>
+            <input name="cargo" id="cargo" type="text">
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input name="email" id="email" class="estilo-email" type="email" placeholder="@teste.com">
+          </div>
+
+          <div>
+            <label for="ddd">DDD</label>
+            <input name="ddd" id="ddd" type="number">
+          </div>
+
+          <div>
+            <label for="tel">Telefone</label>
+            <input name="tel" id="tel" type="tel" placeholder="(00) 0000-0000">
+          </div>
+        </fieldset>
+        <fieldset class="grid grid-button">
+          <button class="button" type="submit" id="submit" name="submit">Enviar Dados</button>
+          <button class="button reset" type="reset" id="reset" name="reset">Limpar Campos</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="container-formulario validacao">
+
+      <h2>JQuery Mask & Input Types</h2>
+      <hr>
+
+      <fieldset class="grid">
+        <div>
+          <label for="cpf">CPF</label>
+          <input name="cpf" id="cpf" type="text" placeholder="000.000.000-00">
+        </div>
+        <div>
+          <label for="cnpj">CNPJ</label>
+          <input name="cnpj" id="cnpj" type="text" placeholder="00.000.000/0000-00">
+        </div>
+        <div>
+          <label for="rg">RG</label>
+          <input name="rg" id="rg" type="text" placeholder="999.999.999-X">
+        </div>
+        <div>
+          <label for="telefone">Telefone</label>
+          <input name="telefone" id="telefone" type="tel" placeholder="(00) 0000-0000">
+        </div>
+        <div>
+          <label for="celular">Celular</label>
+          <input name="celular" id="celular" type="text" placeholder="(00) 0 0000-0000">
+        </div>
+        <div>
+          <label for="salario">Salário</label>
+          <input name="salario" id="salario" type="text" placeholder="máximo: 999.999.999,99">
+        </div>
+        <div>
+          <label for="cepb">CEP</label>
+          <input name="cepb" id="cepb" type="text" placeholder="00000-000">
+        </div>
+        <div>
+          <label for="date">Data de Nascimento</label>
+          <input name="date" id="date" type="date">
+        </div>
+        <div>
+          <label for="placa">Placa</label>
+          <input name="placa" id="placa" type="text" placeholder="AAA-000">
+        </div>
+        <div>
+          <label for="codigo">Código</label>
+          <input name="codigo" id="codigo" type="text" placeholder="AA.aaa.0000">
+        </div>
+        <div>
+          <label for="select">Select</label>
+          <select name="" id="">
+            <option value="" selected>Selecione...</option>
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+          </select>
+        </div>
+        <div class="flex">
+          <p>Sexo: </p>
+          <label for="sexo-m">M</label>
+          <input type="radio" id="sexo-m" name="sexo" value="masculino">
+          <label for="sexo-f">F</label>
+          <input type="radio" id="sexo-f" name="sexo" value="feminino">
+          <label for="sexo-n">N</label>
+          <input type="radio" id="sexo-n" name="sexo" value="neutro">
+        </div>
+        <div class="textarea">
+          <label for="">Campo de Mensagem</label>
+          <textarea name="" id="" maxlength="200" placeholder="Um campo para digitar uma mensagem. Caracteres: max 200 "></textarea>
+        </div>
+      </fieldset>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy Adriano Weverton Cruz Oliveira | Student of <a href="https://www.origamid.com/" target="_blank">Origamid</a> & <a href="https://descomplica.com.br/faculdade/" target="_blank">Uncomplicates Digital College</a></p>
+  </footer>
+</body>
+
+</html>
