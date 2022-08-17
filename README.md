@@ -1,7 +1,7 @@
 ## formulario-simples
 🔸Um formulário simples usando jQuery Mask Plugin.
 ***
-#### 🔸Tecnologias sendo utilizadas:
+#### 🔸Tecnologias utilizadas:
 
 [![HTML5](https://skills.thijs.gg/icons?i=html)](https://pt.wikipedia.org/wiki/HTML5)
 [![CSS3](https://skills.thijs.gg/icons?i=css)](https://pt.wikipedia.org/wiki/CSS3)
