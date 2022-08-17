@@ -14,4 +14,4 @@
 [![formulario](https://user-images.githubusercontent.com/80191040/185256590-58797277-f1f8-4d11-a873-7ae6ceb796a9.png)](https://adriwco.github.io/formulario-simples)
 
 ***
-### <p align="center">🔸[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)🔸</p>
+### <p align="center">🔸[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)🔸</p>
